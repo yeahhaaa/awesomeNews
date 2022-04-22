@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 import { useState, useEffect } from 'react';
 
 export default function usePromise(promiseCreator, deps) {
@@ -18,6 +17,7 @@ export default function usePromise(promiseCreator, deps) {
       setLoading(false);
     };
     process();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
   return [loading, resolved, error];
 }

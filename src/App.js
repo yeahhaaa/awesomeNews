@@ -1,15 +1,13 @@
-import React, { useState, useCallback } from 'react';
-import Categories from './Categories';
-import NewsList from './NewsList';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import NewsPage from './pages/NewsPage';
+import { BrowserRouter } from '../node_modules/react-router-dom/index';
 
 const App = () => {
-  const [category, setCategory] = useState('all');
-  const onSelect = useCallback((category) => setCategory(category), []); //category상태를 업데이트 하는 onSelect함수를 만들었음
   return (
-    <>
-      <Categories category={category} onSelect={onSelect} />
-      <NewsList category={category} />
-    </>
+    <BrowserRouter>
+      <Route path="/:category?" component={NewsPage} />
+    </BrowserRouter>
   );
 };
 

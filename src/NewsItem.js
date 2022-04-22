@@ -6,23 +6,33 @@ const NewsItemBlock = styled.div`
     margin-right: 1rem;
     img {
       display: block;
-      width: 160px;
-      height: 100px;
+      width: 200px;
+      height: 180px;
       object-fit: cover;
+      border: 1px solid gray;
     }
   }
   .contents {
     h2 {
       margin: 0;
+      font-size: 24px;
       a {
         color: black;
+        text-decoration: none;
+        &:hover {
+          color: #495057;
+        }
       }
     }
     p {
       margin: 0;
+      font-size: 16px;
       line-height: 1.5;
       margin-top: 0.5rem;
       white-space: normal;
+      &:hover {
+        color: #495057;
+      }
     }
   }
   & + & {

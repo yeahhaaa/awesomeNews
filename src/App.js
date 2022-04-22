@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback } from 'react';
+import Categories from './Categories';
+import NewsList from './NewsList';
 
-function App() {
+const App = () => {
+  const [category, setCategory] = useState('all');
+  const onSelect = useCallback((category) => setCategory(category), []); //category상태를 업데이트 하는 onSelect함수를 만들었음
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Categories category={category} onSelect={onSelect} />
+      <NewsList category={category} />
+    </>
   );
-}
+};
 
 export default App;
